@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Farisya Intan Rizkia</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Baris Paling Atas: Tombol Navigasi, Musik, & Dark Mode Toggle -->
+        <div class="top-bar">
+            <!-- Tombol Navigasi Lompat Bagian (Di Kiri) -->
+            <nav class="nav-menu">
+                <a href="#my-profile" class="nav-btn">🎀 My Profile</a>
+                <a href="#project-saya" class="nav-btn">📂 Project Saya</a>
+                <a href="#galeri-karya" class="nav-btn">🎨 Galeri Hasil Karya</a>
+            </nav>
+
+            <!-- Kumpulan Tombol Kanan (Musik & Dark Mode) -->
+            <div class="right-controls">
+                <button id="music-btn" class="theme-btn" onclick="toggleMusic()" aria-label="Toggle Music">
+                    🎵 Play Musik
+                </button>
+                <button id="theme-toggle" class="theme-btn" type="button" role="switch" aria-checked="false" aria-label="Mode gelap">
+                    <span class="theme-switch-thumb" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Section Header dengan Foto Wooyoung & San -->
+        <div class="header-top">
+            <img src="uyongsayang.jpg" alt="Wooyoung" class="header-sticker" onerror="this.src='https://placehold.co/100x100/ffd1dc/d86a88?text=Wooyoung'">
+            <a class="site-brand" href="index.html" aria-label="Beranda Farisya">
+                <img src="favicon.jpg" alt="Logo website" class="site-logo">
+                <span class="cute-badge">✨ MY PERSONAL CORNER 🎀</span>
+            </a>
+            <img src="sanniesayang.jpg" alt="San" class="header-sticker" onerror="this.src='https://placehold.co/100x100/ffd1dc/d86a88?text=San'">
+        </div>
+
+        <h1>
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                🌸 Selamat Datang di Website Profil Farisya Intan Rizkia 🌸
+            </marquee>
+        </h1>
+        
+        <h2 id="my-profile">🎀 My Profile 🎀</h2>
+        
+        <div class="profile-section">
+            <div class="photo-box">
+                <img src="riris omg.jpeg" alt="Foto Profil Farisya Intan Rizkia" class="profile-img" onerror="this.src='https://placehold.co/200x250/ffd1dc/d86a88?text=Farisya'">
+                <p>Farisya Intan R. ✨</p>
+                
+                <a href="https://instagram.com/syaa.wynnie" target="_blank" class="ig-link">
+                    <img src="logoig-removebg-preview.png" alt="Instagram Logo" class="ig-icon" onerror="this.style.display='none'">
+                    @syaa.wynnie
+                </a>
+            </div>
+
+            <div class="table-box">
+                <table class="profile-table">
+                    <tr>
+                        <td>Nama</td>
+                        <td>Farisya Intan Rizkia</td>
+                    </tr>
+                    <tr>
+                        <td>Kelas</td>
+                        <td>XI DKV</td>
+                    </tr>
+                    <tr>
+                        <td>Tempat/Tanggal Lahir</td>
+                        <td>Pangkalpinang, 22 April 2010</td>
+                    </tr>
+                    <tr>
+                        <td>Profesi</td>
+                        <td>Student</td>
+                    </tr>
+                    <tr>
+                        <td>Hobi</td>
+                        <td>Drawing & Listen to Music</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>WooSan girlfiee(fr!)</td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>Selindung Baru</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>riris.satoru@gmail.com</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2 id="project-saya">📂 Project Saya</h2>
+        <table class="project-table">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">No</th>
+                    <th>Nama Project</th>
+                    <th>Kategori / Software</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center">1</td>
+                    <td>Desain Kemasan Makanan</td>
+                    <td>CorelDRAW</td>
+                </tr>
+                <tr>
+                    <td class="center">2</td>
+                    <td>Desain Web UMKM</td>
+                    <td>Visual Studio Community</td>
+                </tr>
+                <tr>
+                    <td class="center">3</td>
+                    <td>Video Tutorial & Presentasi</td>
+                    <td>CapCut Desktop & Canva</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section Galeri Hasil Karya -->
+        <h2 id="galeri-karya">🎨 Galeri Hasil Karya</h2>
+        <div class="gallery-section">
+            <!-- Karya 1 -->
+            <a class="gallery-card gallery-link" href="karya-strawberry-sando.html">
+                <img src="desain kemasan riris.png" alt="Hasil Karya 1" class="gallery-img" onerror="this.src='https://placehold.co/300x200/ffd1dc/d86a88?text=Karya+1'">
+                <p class="gallery-title">strawberry sando🍓</p>
+                <span class="gallery-desc">corel draw</span>
+            </a>
+
+            <!-- Karya 2 -->
+            <a class="gallery-card gallery-link" href="karya-me-n-him.html">
+                <img src="karya riris.png" alt="Hasil Karya 2" class="gallery-img" onerror="this.src='https://placehold.co/300x200/ffd1dc/d86a88?text=Karya+2'">
+                <p class="gallery-title">me n him?</p>
+                <span class="gallery-desc">sketchbook Art</span>
+            </a>
+
+            <!-- Karya 3 -->
+            <a class="gallery-card gallery-link" href="karya-editing-video.html">
+                <img src="capcut project.png" alt="Hasil Karya 3" class="gallery-img" onerror="this.src='https://placehold.co/300x200/ffd1dc/d86a88?text=Karya+3'">
+                <p class="gallery-title">editing tutorial video</p>
+                <span class="gallery-desc">capcut desktop</span>
+            </a>
+        </div>
+
+        <section class="gallery-feature-section" aria-label="Foto dan cerita WooSan">
+            <figure class="gallery-photo-frame">
+                <span class="photo-sparkle photo-sparkle-left" aria-hidden="true">✦</span>
+                <img src="foto-bingkai-galeri.jpg" alt="Foto kenangan Farisya" class="gallery-photo">
+                <figcaption>WooSan ✨</figcaption>
+                <span class="photo-sparkle photo-sparkle-right" aria-hidden="true">♡</span>
+            </figure>
+
+            <section class="woosan-note" aria-labelledby="woosan-title">
+                <div class="woosan-note-heading">
+                    <span class="woosan-note-icon" aria-hidden="true">♡</span>
+                    <span class="woosan-note-label">A LITTLE FAN CORNER</span>
+                </div>
+                <h3 id="woosan-title">Meet WooSan ✨</h3>
+                <p class="woosan-note-intro">WooSan is the ship name for Wooyoung and San, two members of ATEEZ.</p>
+                <div class="woosan-note-divider" aria-hidden="true"></div>
+                <p>They’re one of my favorite duos! I love seeing their interactions and sweet moments together—they always make me smile. That’s why WooSan is one of my favorite ships in ATEEZ 💕</p>
+                <div class="woosan-tags" aria-label="Tentang WooSan">
+                    <span>ATEEZ</span>
+                    <span>Wooyoung</span>
+                    <span>San</span>
+                    <span>My Favorite Ship</span>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <!-- ELEMEN AUDIO (Sudah diganti ke drip clip.mp3) -->
+    <audio id="bg-music" loop>
+        <source src="drip clip.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
