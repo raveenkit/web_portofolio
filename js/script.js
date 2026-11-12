@@ -69,5 +69,38 @@ if (bgMusic) {
     updateMusicButton();
 }
 
+// ==========================================
+// 3. PEMUTAR VIDEO WOOSAN
+// ==========================================
+const woosanVideo = document.getElementById('woosan-video');
+const woosanVideoToggle = document.getElementById('woosan-video-toggle');
+
+function updateWooSanVideoButton() {
+    if (!woosanVideo || !woosanVideoToggle) return;
+
+    const isPlaying = !woosanVideo.paused && !woosanVideo.ended;
+    woosanVideoToggle.textContent = isPlaying ? '⏸ Pause Video' : '▶ Play Video';
+    woosanVideoToggle.setAttribute('aria-label', isPlaying ? 'Jeda video WooSan' : 'Putar video WooSan');
+    woosanVideoToggle.setAttribute('aria-pressed', String(isPlaying));
+}
+
+if (woosanVideo && woosanVideoToggle) {
+    woosanVideo.addEventListener('play', updateWooSanVideoButton);
+    woosanVideo.addEventListener('pause', updateWooSanVideoButton);
+    woosanVideo.addEventListener('ended', updateWooSanVideoButton);
+    woosanVideoToggle.addEventListener('click', () => {
+        if (woosanVideo.paused || woosanVideo.ended) {
+            woosanVideo.play().catch(err => {
+                if (err.name !== 'AbortError') {
+                    console.error('Gagal memutar video WooSan:', err);
+                }
+                updateWooSanVideoButton();
+            });
+        } else {
+            woosanVideo.pause();
+        }
+    });
+}
+
 // Pesan di Console
 console.log("Script loaded! Dark Mode, Smooth Scroll, and Music Player features are ready. ✨");
