@@ -417,9 +417,16 @@
 }
 
 .gallery-link:focus-visible,
-.back-link:focus-visible {
+.back-link:focus-visible,
+.idol-link:focus-visible {
     outline: 3px solid #6c8ebf;
     outline-offset: 3px;
+}
+
+.idol-link {
+    display: inline-flex;
+    flex-shrink: 0;
+    border-radius: 50%;
 }
 
 .gallery-card:hover {

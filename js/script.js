@@ -34,50 +34,40 @@ if (themeToggleBtn) {
 }
 
 // ==========================================
-// 2. FUNGSI MUSIK OTOMATIS & TOMBOL KONTROL
+// 2. KONTROL MUSIK
 // ==========================================
 const bgMusic = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
-let isPlaying = false;
+
+function updateMusicButton() {
+    if (musicBtn && bgMusic) {
+        musicBtn.textContent = bgMusic.paused ? '🎵 Play Musik' : '⏸️ Pause Musik';
+    }
+}
 
 function toggleMusic() {
     if (!bgMusic) return;
     
-    if (isPlaying) {
+    if (!bgMusic.paused) {
         bgMusic.pause();
-        if (musicBtn) musicBtn.textContent = '🎵 Play Musik';
-        isPlaying = false;
     } else {
         bgMusic.play().then(() => {
-            if (musicBtn) musicBtn.textContent = '⏸️ Pause Musik';
-            isPlaying = true;
+            updateMusicButton();
         }).catch(err => {
-            console.log("Gagal memutar audio:", err);
+            if (err.name !== 'AbortError') {
+                console.error('Gagal memutar audio:', err);
+            }
+            updateMusicButton();
         });
     }
 }
 
-// Otomatis mencoba memutar musik saat halaman dimuat
-window.addEventListener('DOMContentLoaded', () => {
-    if (!bgMusic) return;
-    
+if (bgMusic) {
     bgMusic.volume = 0.5;
-    bgMusic.play().then(() => {
-        isPlaying = true;
-        if (musicBtn) musicBtn.textContent = '⏸️ Pause Musik';
-    }).catch(() => {
-        // Jika diblokir browser, musik langsung menyala pada klik/sentuhan pertama di layar
-        document.body.addEventListener('click', function autoPlayOnFirstClick() {
-            if (!isPlaying) {
-                bgMusic.play().then(() => {
-                    if (musicBtn) musicBtn.textContent = '⏸️ Pause Musik';
-                    isPlaying = true;
-                });
-            }
-            document.body.removeEventListener('click', autoPlayOnFirstClick);
-        }, { once: true });
-    });
-});
+    bgMusic.addEventListener('play', updateMusicButton);
+    bgMusic.addEventListener('pause', updateMusicButton);
+    updateMusicButton();
+}
 
 // Pesan di Console
 console.log("Script loaded! Dark Mode, Smooth Scroll, and Music Player features are ready. ✨");
